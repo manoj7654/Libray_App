@@ -17,6 +17,7 @@ import { bookRouter } from "./route/bookRouter";
 dotenv.config();
 const app: Application = express();
 
+// <...........cookieParser for storing token ..................>
 app.use(cookieParser())
 app.use(express.json())
 

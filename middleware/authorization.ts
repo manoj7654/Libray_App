@@ -1,7 +1,7 @@
 
 import { Request, Response, NextFunction } from "express";
 
-
+// <.............authorize.....................>
 const authorize = (permittedRoles: string[]) => (req:Request, res:Response, next:NextFunction) => {
   const { userrole } = req.body;
   console.log(req.body)

@@ -1,8 +1,17 @@
+// <.................bcrypt for hashing password..................>
 import bcrypt from 'bcrypt';
+
+// <...........jwt for generating token..................>
 import jwt from 'jsonwebtoken';
+
+// <.................importing express for req,res.................>
 import { Request, Response } from 'express';
+
+// <.............UserModel for register and login ...............>
 import { UserModel } from '../model/userModel';
 
+
+// <..................register for users................>
 const register = async (req: Request, res: Response) => {
   const { email, password, role } = req.body;
   const data = await UserModel.findOne({ email });
@@ -25,6 +34,8 @@ const register = async (req: Request, res: Response) => {
     }
   }
 };
+
+// <..................Login for users.............................>
 
 const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;

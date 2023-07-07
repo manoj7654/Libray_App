@@ -6,6 +6,8 @@ export interface User extends Document {
   role: string[];
 }
 
+// <...............user schema......................>
+
 const userSchema = new mongoose.Schema<User>(
   {
     email: String,
@@ -14,6 +16,8 @@ const userSchema = new mongoose.Schema<User>(
   },
   { versionKey: false }
 );
+
+// <...............user model...................>
 
 const UserModel = mongoose.model<User>("users", userSchema);
 

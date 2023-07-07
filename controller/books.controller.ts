@@ -1,14 +1,20 @@
+
+// <........................Importing express..................>
+
 import express, { Request, Response } from "express";
+
+
+// <..............Importing BookModel for creating book and finding book........>
 import {BookModel} from "../model/bookModel"
 
-const booksRouter = express.Router();
 
-// Create a book
+
+// <............Create a book..............>
 
 const add=async(req: Request, res: Response)=>{
     const { title, author,userId } = req.body;
 
-    // console.log(userId)
+ 
  
     const book = new BookModel({ title, author,userId });
     try {
@@ -21,7 +27,7 @@ const add=async(req: Request, res: Response)=>{
 }
 
 
-// Get books based on user role
+// <.............Get books based on user role...............>
 
 const getBook=async(req: Request, res: Response)=>{
     const { userrole } = req.body;

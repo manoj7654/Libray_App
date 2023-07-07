@@ -7,6 +7,7 @@ export interface Book extends Document {
   createdAt: Date;
 
 }
+// <..............bookSchema................>
 
 const bookSchema = new mongoose.Schema<Book>(
   {
@@ -19,6 +20,8 @@ const bookSchema = new mongoose.Schema<Book>(
  
    }
 );
+
+// <.................bookmodel.................>
 
 const BookModel = mongoose.model<Book>("Book", bookSchema);
 
